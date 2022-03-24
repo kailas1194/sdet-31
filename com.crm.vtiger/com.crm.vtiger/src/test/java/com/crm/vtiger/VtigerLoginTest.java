@@ -33,9 +33,14 @@ public class VtigerLoginTest {
 			  WebDriverManager.chromedriver().setup();
 			  driver=new ChromeDriver();
 		  }
-		  else {
+		  else if (browser.contains("firefox")) 
+		  {
 			  WebDriverManager.firefoxdriver().setup();
 			  driver=new FirefoxDriver();
+		  }
+		  else {
+			  WebDriverManager.chromedriver().setup();
+			  driver=new ChromeDriver();
 		}
 		  driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
